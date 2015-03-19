@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
+    </script>
+</head>
+<body ng-app="">
+<div>
+    <p>Enter your name : <input type="text" ng-model="name" ng-init="countries=[{locale:'en-US',name:'United States'},
+ {locale:'en-GB',name:'United Kingdom'},
+ {locale:'en-FR',name:'France'}]"></p>
+
+    <p>Hello World, <span ng-bind="name"></span></p>
+
+    <ol>
+        <li ng-repeat="country in countries">
+            <!--{{'Country: ' + country.name + ', Locale: ' + country.locale}}-->
+            {{'Country: ' + country.name | uppercase}} , {{'Locale: ' + country.locale | lowercase}}
+        </li>
+    </ol>
+</div>
+<br>
+<br>
+<br>
+
+<div ng-controller="studentController">
+    <p>Enter your firstName: <input type="text" ng-model="student.firstName"></p>
+
+    <p>Enter your lasName: <input type="text" ng-model="student.lastName"></p>
+
+    <p>Enter your fees: <input type="text" ng-model="student.fees"></p>
+
+    <p>Enter your subjects: <input type="text" ng-model="subjectName"></p>
+
+    <p>{{student.fullName() | uppercase}}</p>
+
+    <p>Fees : {{student.fees | currency}}</p>
+
+    <p>Subjects : </p>
+    <ul>
+        <li ng-repeat="sub in student.subjects">
+            {{'Subject: ' + sub.name + '; marks: ' + sub.marks}}
+        </li>
+    </ul>
+
+    <script>
+        function studentController($scope) {
+            $scope.student = {
+                firstName: "Jim",
+                lastName: "Green",
+                fees: 5000,
+                subjects: [
+                    {name: 'History', marks: 76}, {name: 'Math', marks: 65}, {name: 'Chemistry', marks: 82}
+                ],
+                fullName: function () {
+                    var studentObj = $scope.student;
+                    return studentObj.firstName + " " + studentObj.lastName;
+                }
+
+            };
+        }
+    </script>
+</div>
+
+</body>
+</body>
+</html>
