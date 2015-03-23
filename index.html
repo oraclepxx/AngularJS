@@ -39,11 +39,42 @@
     <p>Fees : {{student.fees | currency}}</p>
 
     <p>Subjects : </p>
-    <ul>
-        <li ng-repeat="sub in student.subjects">
-            {{'Subject: ' + sub.name + '; marks: ' + sub.marks}}
-        </li>
-    </ul>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Marks</th>
+        </tr>
+        <tr ng-repeat="subject in student.subjects">
+            <td>{{ subject.name }}</td>
+            <td>{{ subject.marks }}</td>
+        </tr>
+    </table>
+
+
+    <br>
+    <div>
+        <input type="checkbox" ng-model="enableDisableButton">Disable Button
+        <button ng-disabled="enableDisableButton">Click me</button>
+
+    </div>
+
+    <div>
+        <input type="checkbox" ng-model="showHide">Show Button
+        <button ng-show="showHide">Click me</button>
+
+    </div>
+
+    <div>
+        <input type="checkbox" ng-model="hideShow">Hide Button
+        <button ng-hide="hideShow">Click me</button>
+
+    </div>
+
+    <div>
+        <input type="button" ng-click="counter = counter + 1" value="Click">
+        <p>Total click: {{counter}}</p>
+    </div>
+
 
     <script>
         function studentController($scope) {
