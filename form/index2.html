@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular2</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="mainApp.js"></script>
+    <script src="studentController.js"></script>
+</head>
+<body>
+    <!--<div ng-app="mainApp" ng-controller="studentController">-->
+        <!--<p>Enter your firstName: <input type="text" ng-model="student.firstName"></p>-->
+
+        <!--<p>Enter your lasName: <input type="text" ng-model="student.lastName"></p>-->
+
+        <!--<p>Enter your fees: <input type="text" ng-model="student.fees"></p>-->
+
+        <!--<p>Enter your subjects: <input type="text" ng-model="subjectName"></p>-->
+
+        <!--<p>Name: {{student.fullName() | uppercase}}   (Fees{{student.fees}})</p>-->
+
+        <!--<p>Fees : {{student.fees | currency}}</p>-->
+
+        <!--<p>Subjects : </p>-->
+        <!--<table>-->
+            <!--<tr>-->
+                <!--<th>Name</th>-->
+                <!--<th>Marks</th>-->
+            <!--</tr>-->
+            <!--<tr ng-repeat="subject in student.subjects">-->
+                <!--<td>{{ subject.name }}</td>-->
+                <!--<td>{{ subject.marks }}</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+
+
+
+        <!--<p>-->
+            <!--<input name="firstname" type="text" ng-model="firstNameInput">-->
+            <!--<input name="lastname" type="text" ng-model="lastNameInput">-->
+            <!--<input name="email" type="text" ng-model="emailInput">-->
+
+            <!--<button ng-click="reset()">Reset</button>-->
+
+        <!--</p>-->
+    <!--</div>-->
+
+    <div ng-app="mainApp" ng-controller="studentController">
+        <form name="studentForm" novalidate>
+            <table border="0">
+                <tr>
+                    <td>
+                        FirstName:
+                    </td>
+                    <td>
+                        <input name="firstname" type="text" ng-model="firstNameInput" required>
+                        <span style="color:red"
+                              ng-show="studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+                            <span ng-show="studentForm.firstname.$error.required">First name is required.</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        LastName:
+                    </td>
+                    <td>
+                        <input name="lastname" type="text" ng-model="lastNameInput" required>
+                        <span style="color:red" ng-show="studentForm.lastname.$dirty && studentForm.lastname.$invalid">
+                            <span ng-show="studentForm.lastname.$error.required">Last Name is required.</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button ng-click="submitForm()">Submit</button>
+                    </td>
+                    <td>
+                        <button ng-click="resetForm()">Reset</button>
+                    </td>
+                </tr>
+            </table>
+            <span ng-model="msg">{{msg}}</span>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
