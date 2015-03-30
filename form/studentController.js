@@ -28,7 +28,11 @@ mainApp.controller("studentController", function ($scope) {
     $scope.submitForm = function () {
         var firstName = $scope.firstNameInput;
         var lastName = $scope.lastNameInput;
-        $scope.msg = "[" + firstName + ", " + lastName + "] submitted";
+        if ("" === firstName || "" === lastName) {
+            $scope.msg = "";
+        } else {
+            $scope.msg = "[" + firstName + ", " + lastName + "] submitted";
+        }
     },
 
     $scope.resetForm = function() {

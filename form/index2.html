@@ -53,7 +53,7 @@
                         FirstName:
                     </td>
                     <td>
-                        <input name="firstname" type="text" ng-model="firstNameInput" required>
+                        <input name="firstname" type="text" ng-model="firstNameInput" ng-disabled="true" initValue="Helo" required>
                         <span style="color:red"
                               ng-show="studentForm.firstname.$dirty && studentForm.firstname.$invalid">
                             <span ng-show="studentForm.firstname.$error.required">First name is required.</span>
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <button ng-click="submitForm()">Submit</button>
+                        <button ng-click="submitForm()" ng-disabled="studentForm.firstname.$invalid || studentForm.lastname.$invalid">Submit</button>
                     </td>
                     <td>
                         <button ng-click="resetForm()">Reset</button>
