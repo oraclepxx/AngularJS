@@ -3,11 +3,29 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>AngularJS Sample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    <script src="viewApp.js"></script>
+    <script src="addStudentController.js"></script>
+    <script src="viewStudentController.js"></script>
 </head>
 <body>
-<div ng-app="mainApp">
+<div ng-app="viewApp">
     <p><a href="#addStudent">Add Student Page</a></p>
+
     <p><a href="#viewStudent">View Student Page</a></p>
+
+    <div ng-view>
+        <script type="text/ng-template" id="addStudent.htm">
+            <h3>AddStudent</h3>
+            <h4>{{message}}</h4>
+        </script>
+
+        <script type="text/ng-template" id="viewStudent.htm">
+            <h3>ViewStudent</h3>
+            <h4>{{message}}</h4>
+        </script>
+    </div>
 </div>
 
 </body>

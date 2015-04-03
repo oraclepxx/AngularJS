@@ -2,9 +2,9 @@
  * Created by xinpan on 04/02/2015.
  */
 
-var mainApp = angular.module("mainApp", ['ngRoute']);
+var viewApp = angular.module("mainApp", ['ngRoute']);
 
-mainApp.config(['$routeProvider', function ($routeProvider) {
+viewApp.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider.when('/addStudent', {
         templateUrl: 'addStudent.htm',
