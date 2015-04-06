@@ -6,12 +6,25 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="mainApp.js"></script>
     <script src="calcuateController.js"></script>
+    <script src="mathController.js"></script>
 </head>
-<body ng-app="mainApp" ng-controller="calculateController">
-    <div>
+<body ng-app="mainApp">
+    <div ng-controller="calculateController">
         <p>Enter a number:</p><input type="number" ng-model="inputValue">
-        <button ng-click="square()">Square</button>
+        <button ng-click="square()">Square<sup>2</sup></button>
         <button ng-click="sqrt()">Sqrt</button>
+        <p>Result: {{result}}</p>
+    </div>
+
+    <div ng-controller="mathController">
+        <p>Enter two numbers:</p>
+        <input type="number" ng-model="inputNum1">
+        <input type="number" ng-model="inputNum2">
+        <p></p>
+        <button ng-click="add()">Add</button>
+        <button ng-click="subtract()">Subtract</button>
+        <button ng-click="multi()">Multi</button>
+        <button ng-click="divide()">Divide</button>
         <p>Result: {{result}}</p>
     </div>
 
