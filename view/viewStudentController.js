@@ -3,5 +3,5 @@
  */
 
 viewApp.controller('viewStudentController', function ($scope) {
-    $scope.message = "View Student";
+    $scope.message = "This is View Student Page";
 });

@@ -2,7 +2,7 @@
  * Created by xinpan on 04/02/2015.
  */
 
-var viewApp = angular.module("mainApp", ['ngRoute']);
+var viewApp = angular.module("viewApp", ['ngRoute']);
 
 viewApp.config(['$routeProvider', function ($routeProvider) {
 
@@ -12,6 +12,6 @@ viewApp.config(['$routeProvider', function ($routeProvider) {
     }).when('/viewStudent', {
         templateUrl: 'viewStudent.htm',
         controller: 'viewStudentController'
-    }).other({redirectTo: '/addStudent'});
+    }).otherwise({redirectTo: '/addStudent'});
 
 }]);
