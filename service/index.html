@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Service</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="mainApp.js"></script>
+    <script src="calcuateController.js"></script>
+</head>
+<body ng-app="mainApp" ng-controller="calculateController">
+    <div>
+        <p>Enter a number:</p><input type="number" ng-model="inputValue">
+        <button ng-click="square()">Square</button>
+        <button ng-click="sqrt()">Sqrt</button>
+        <p>Result: {{result}}</p>
+    </div>
+
+</body>
+</html>
