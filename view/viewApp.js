@@ -12,6 +12,6 @@ viewApp.config(['$routeProvider', function ($routeProvider) {
     }).when('/viewStudent', {
         templateUrl: 'viewStudent.htm',
         controller: 'viewStudentController'
-    }).otherwise({redirectTo: '/addStudent'});
+    }).otherwise({redirectTo: '/default'});
 
 }]);
