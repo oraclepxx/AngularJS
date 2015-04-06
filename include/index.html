@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Angular JS</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src="dataMain.js"></script>
     <script src="dataController.js"></script>
 </head>
-<body ng-app="dataMain" ng-controller="dataHandler">
+<body ng-app="dataMain" ng-controller="dataController">
 <!--<div ng-include="'main.htm'"></div>-->
 <!--<div ng-include="'sub.htm'"></div>-->
 <!--<div ng-include="'txt.html'"></div>-->
@@ -24,15 +25,6 @@
         <td>{{student.Percentage}}</td>
     </tr>
 
-    <script>
-        function dataHandler($scope, $http) {
-            var url = "data.json";
-            $http.getUrl(url).success(function (resp) {
-                $scope.students = resp;
-            });
-        }
-
-    </script>
 </table>
 </body>
 </html>
