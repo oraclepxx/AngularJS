@@ -4,6 +4,8 @@
 
 var mainApp = angular.module("mainApp", []);
 
+mainApp.value("defaultInputValue", 5);
+
 mainApp.factory("MathService", function () {
     var factory = {};
 
