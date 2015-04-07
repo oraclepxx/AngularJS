@@ -4,10 +4,16 @@
 
 var mainApp = angular.module("mainApp", []);
 
-mainApp.directive('my-directive', function () {
+mainApp.directive("my-directive", function () {
+
     return {
-        restrict: 'E',
-        template: '<div>This is my first custom directive</div>'
-    }
+        restrict: "A",
+        templateUrl: "<h1>This is my first custom directive</h1>"
+    };
+
+    //var directive = {};
+    //directive.restrict = "A";
+    //directive.template = "<h1>This is my first custom directive.</h1>";
+    //return directive;
 
 });
